@@ -1,7 +1,7 @@
 name: Chellenge Two
 on: [push]
 env:
-  ENVIROMENT_VARIABLE:  ArtifactName
+  ARTIFACT_NAME:  myartifact
 jobs:
   job1:
     runs-on: ubuntu-latest
