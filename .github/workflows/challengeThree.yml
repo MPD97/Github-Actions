@@ -4,20 +4,14 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-      - uses: actions/checkout@v2
-        
-      - name: Run python script
+      - uses: actions/checkout@v2   
       - run: python hello.py
   build:
     needs: [test]
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
       - uses: actions/checkout@v2
-        
-      - name: Create artifact
       - uses: actions/upload-artifact@v2
         with:
-          name: build-artifact
+          name: hello
           path: . 
