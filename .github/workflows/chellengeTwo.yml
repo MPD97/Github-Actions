@@ -13,4 +13,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name:  ${{ env.ARTIFACT_NAME }}
-          path:  output/chellengeTwo/${{ env.ARTIFACT_NAME }}.txt
+          path:  .
