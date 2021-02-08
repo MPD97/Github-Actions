@@ -6,16 +6,18 @@ jobs:
     steps:
       - name: Checkout repository
       - uses: actions/checkout@v2
+        
       - name: Run python script
         run: python hello.py
   build:
-    runs-on: ubuntu-latest
     needs: [test]
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
       - uses: actions/checkout@v2
+        
       - name: Create artifact
-        uses: actions/create-artifact@v2
+        uses: actions/upload-artifact@v2
         with:
           name: build-artifact
           path: . 
