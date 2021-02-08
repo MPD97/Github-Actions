@@ -1,0 +1,21 @@
+name: Challenge three
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+      - uses: actions/checkout@v2
+      - name: Run python script
+        run: python hello.py
+  build:
+    runs-on: ubuntu-latest
+    needs: [test]
+    steps:
+      - name: Checkout repository
+      - uses: actions/checkout@v2
+      - name: Create artifact
+        uses: actions/create-artifact@v2
+        with:
+          name: build-artifact
+          path: . 
